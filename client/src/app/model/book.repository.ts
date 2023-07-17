@@ -19,13 +19,15 @@ export class BookRepository
         })
     }
 
-    getBooks(author: string = null): Book[]
+    // getBooks(author: string = null): Book[]
+    getBooks(author: string | null = null): Book[]
     {
         return this.books
             .filter(b => author == null || author === b.author);
     }
 
-    getBook(id: number): Book
+    // getBook(id: number): Book
+    getBook(id: number): Book | undefined
     {
         return this.books.find(b => b._id === id);
     }
